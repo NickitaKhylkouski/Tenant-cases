@@ -7,11 +7,9 @@ const Info = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="w-full max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
         <nav className="mb-8">
-          <Link href="/">
-            <a className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
-              <Home className="w-5 h-5 mr-2" />
-              Back to Cases
-            </a>
+          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
+            <Home className="w-5 h-5 mr-2" />
+            Back to Cases
           </Link>
         </nav>
 
