@@ -5,12 +5,14 @@ import "./index.css";
 import { SWRConfig } from "swr";
 import { fetcher } from "./lib/fetcher";
 import CaseSummary from "./pages/CaseSummary";
+import Info from "./pages/Info";
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <SWRConfig value={{ fetcher }}>
       <Switch>
         <Route path="/" component={CaseSummary} />
+        <Route path="/info" component={Info} />
         <Route>404 Page Not Found</Route>
       </Switch>
     </SWRConfig>
