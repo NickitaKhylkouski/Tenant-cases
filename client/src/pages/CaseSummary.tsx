@@ -5,6 +5,7 @@ interface Case {
   title: string;
   issues: string[];
   outcome: string[];
+  emoji: string;
 }
 
 const CaseSummary = () => {
@@ -13,6 +14,7 @@ const CaseSummary = () => {
   const cases: Case[] = [
     {
       title: "Heating and Window Issues",
+      emoji: "🌡️",
       issues: [
         "Single-pane windows did not provide weather protection",
         "Heating system did not adequately heat the unit"
@@ -24,6 +26,7 @@ const CaseSummary = () => {
     },
     {
       title: "Rent Increase and Low Income Case",
+      emoji: "💰",
       issues: [
         "Rent increase of almost 10%",
         "Tenant's income was significantly lower",
@@ -36,6 +39,7 @@ const CaseSummary = () => {
     },
     {
       title: "Severe Mold Growth Case",
+      emoji: "💧",
       issues: [
         "Extensive mold growth over time",
         "Landlord failed to make timely repairs",
@@ -47,6 +51,7 @@ const CaseSummary = () => {
     },
     {
       title: "Multiple Habitability Issues",
+      emoji: "🔧",
       issues: [
         "Water leak causing strong smells",
         "Broken windows and cracks in walls",
@@ -59,6 +64,7 @@ const CaseSummary = () => {
     },
     {
       title: "Water Damage and Mold Case",
+      emoji: "💧",
       issues: [
         "Water leak from roof caused mold",
         "Landlord took two months to address the leak",
@@ -71,6 +77,7 @@ const CaseSummary = () => {
     },
     {
       title: "Rent Concessions Dispute",
+      emoji: "💰",
       issues: [
         "Landlord did not factor rent concessions into base rent",
         "Tenant faced unlawful rent increase"
@@ -81,6 +88,7 @@ const CaseSummary = () => {
     },
     {
       title: "Banked Rent Increases Hardship",
+      emoji: "💰",
       issues: [
         "Landlord attempted to apply banked rent increases",
         "Tenant argued banked increases would be an undue hardship"
@@ -91,6 +99,7 @@ const CaseSummary = () => {
     },
     {
       title: "Bathroom and Parking Issues",
+      emoji: "🔧",
       issues: [
         "Peeling reglazing in the bathroom",
         "Overflowing trash bins attracting vermin",
@@ -103,6 +112,7 @@ const CaseSummary = () => {
     },
     {
       title: "Bedroom Mold and Water Damage",
+      emoji: "💧",
       issues: [
         "Mold in bedroom from ceiling leak",
         "Water leak in the parking lot",
@@ -115,6 +125,7 @@ const CaseSummary = () => {
     },
     {
       title: "Secondhand Smoke and Base Rent Dispute",
+      emoji: "⚖️",
       issues: [
         "Incorrect base rent calculation",
         "Unlawful rent increases",
@@ -127,6 +138,7 @@ const CaseSummary = () => {
     },
     {
       title: "Property Registration and Pest Issues",
+      emoji: "🐛",
       issues: [
         "Unregistered property with RSP",
         "Ant and spider infestation",
@@ -139,6 +151,7 @@ const CaseSummary = () => {
     },
     {
       title: "Outdoor Patio Maintenance Case",
+      emoji: "🔧",
       issues: [
         "Cracked and uneven outdoor patio",
         "Tenant requested a rent reduction",
@@ -152,6 +165,7 @@ const CaseSummary = () => {
     },
     {
       title: "Roach Infestation and Noise Issues",
+      emoji: "🐛",
       issues: [
         "Reoccurring roach infestation",
         "Noise complaints from a neighboring tenant",
@@ -164,6 +178,7 @@ const CaseSummary = () => {
     },
     {
       title: "Property Management Issues",
+      emoji: "🔧",
       issues: [
         "Property management and maintenance concerns",
         "Issues with elevator, lights, bugs, paths, trees, and creek",
@@ -176,6 +191,7 @@ const CaseSummary = () => {
     },
     {
       title: "Multiple Rent Increases Case",
+      emoji: "💰",
       issues: [
         "Landlord failed to register the property with the rent stabilization program",
         "Landlord increased rent twice within a twelve-month period"
@@ -186,6 +202,7 @@ const CaseSummary = () => {
     },
     {
       title: "Water Damage and Rent Rollback",
+      emoji: "💧",
       issues: [
         "Landlord did not roll back rent when the rent stabilization law passed",
         "The unit had water damage and a decrease in housing services"
@@ -196,6 +213,7 @@ const CaseSummary = () => {
     },
     {
       title: "Utility Charges and Security Deposit",
+      emoji: "💰",
       issues: [
         "New utility charges added to lease",
         "Increase in security deposit",
@@ -207,6 +225,7 @@ const CaseSummary = () => {
     },
     {
       title: "Mold Case Appeal",
+      emoji: "⚖️",
       issues: [
         "Landlord failed to comply with prior mold case decision",
         "Landlord argued tenants contributed to the mold",
@@ -219,6 +238,7 @@ const CaseSummary = () => {
     },
     {
       title: "Household Income Disclosure Case",
+      emoji: "⚖️",
       issues: [
         "Tenant did not disclose household member income",
         "Tenant had inadequate income",
@@ -231,6 +251,7 @@ const CaseSummary = () => {
     },
     {
       title: "Late Petition Filing Case",
+      emoji: "⚖️",
       issues: [
         "Tenant filed petition late",
         "Landlord did not give banked increase notices",
@@ -243,6 +264,7 @@ const CaseSummary = () => {
     },
     {
       title: "Compliance Hearing Case",
+      emoji: "⚖️",
       issues: [
         "Compliance hearing for previous case",
         "Tenant argued repairs were not completed",
@@ -255,6 +277,7 @@ const CaseSummary = () => {
     },
     {
       title: "Utility Fees and Rent Concession",
+      emoji: "💰",
       issues: [
         "Landlord incorrectly applied rent concession to base rent",
         "Landlord excluded utility fees from the base rent calculation"
@@ -265,6 +288,7 @@ const CaseSummary = () => {
     },
     {
       title: "Rent Stabilization Information Case",
+      emoji: "⚖️",
       issues: [
         "Landlord did not include rent stabilization information in the lease",
         "Landlord incorrectly calculated base rent after the lease expired"
@@ -275,6 +299,7 @@ const CaseSummary = () => {
     },
     {
       title: "Base Rent Calculation Case",
+      emoji: "💰",
       issues: [
         "Landlord did not mention rent stabilization in the lease",
         "Landlord incorrectly calculated base rent after lease expired"
@@ -285,6 +310,7 @@ const CaseSummary = () => {
     },
     {
       title: "Mold and Rent Increase Dispute",
+      emoji: "💧",
       issues: [
         "Mold in rental unit",
         "Unwanted rent increase",
@@ -298,6 +324,7 @@ const CaseSummary = () => {
     },
     {
       title: "Unlawful Rent Increase and Maintenance Issues",
+      emoji: "💰",
       issues: [
         "Unlawful rent increase based on incorrect base rent",
         "Mold in the bathrooms",
@@ -311,6 +338,7 @@ const CaseSummary = () => {
     },
     {
       title: "Low Income Tenant Hardship Case",
+      emoji: "💰",
       issues: [
         "Tenant hardship due to low income",
         "Rent increase included a banked increase",
@@ -324,6 +352,7 @@ const CaseSummary = () => {
     },
     {
       title: "Simple Rent Overcharge Case",
+      emoji: "💰",
       issues: [
         "Unlawful rent increase",
         "Tenant overcharged rent"
@@ -334,6 +363,7 @@ const CaseSummary = () => {
     },
     {
       title: "Multiple Illegal Rent Increases",
+      emoji: "💰",
       issues: [
         "Multiple rent increases in a 12-month period",
         "Incorrect base rent calculation"
@@ -345,6 +375,7 @@ const CaseSummary = () => {
     },
     {
       title: "Pet Deposit and Rent Concessions Dispute",
+      emoji: "💰",
       issues: [
         "Unlawful rent increase due to failure to account for concessions",
         "Landlord collected an unlawful pet deposit"
@@ -357,6 +388,7 @@ const CaseSummary = () => {
     },
     {
       title: "Security Deposit and Previous Decision Compliance",
+      emoji: "⚖️",
       issues: [
         "Landlord did not comply with a previous decision regarding rent and refunds",
         "Landlord did not refund a security deposit"
@@ -385,7 +417,9 @@ const CaseSummary = () => {
                 onClick={() => setOpenCase(openCase === index ? null : index)}
                 className="w-full px-6 py-4 flex justify-between items-center hover:bg-gray-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
               >
-                <span className="text-lg font-medium text-gray-900">
+                <span className="text-lg font-medium text-gray-900 flex items-center gap-2">
+                  <span className="text-sm text-gray-500">#{index + 1}</span>
+                  <span className="mr-2">{caseItem.emoji}</span>
                   {caseItem.title}
                 </span>
                 {openCase === index ? (
