@@ -1,7 +1,6 @@
 import type { Express } from "express";
 import { OpenAI } from "openai";
-import { PythonShell } from 'python-shell';
-import { promisify } from 'util';
+import { PythonShell, Options } from 'python-shell';
 import path from 'path';
 
 const openai = new OpenAI();
@@ -11,14 +10,25 @@ import { cases } from "../client/src/cases";
 
 const getPdfContext = async (pdfPath: string): Promise<string> => {
   try {
-    const pyshell = new PythonShell('server/pdf_utils.py', {
-      mode: 'text',
+    const options: Options = {
+      mode: 'text' as const,
       pythonOptions: ['-u'],
+      scriptPath: 'server',
+      args: [pdfPath]
+    };
+
+    return new Promise((resolve, reject) => {
+      PythonShell.run('pdf_utils.py', options).then(results => {
+        if (results && results.length > 0) {
+          resolve(results.join('\n'));
+        } else {
+          resolve('');
+        }
+      }).catch(err => {
+        console.error('Error running Python script:', err);
+        resolve('');
+      });
     });
-    
-    const runPython = promisify(pyshell.run).bind(pyshell);
-    const result = await runPython([pdfPath]);
-    return result.join('\n');
   } catch (error) {
     console.error('Error getting PDF context:', error);
     return '';
@@ -42,9 +52,7 @@ Important Rules:
 - Keep responses practical and specific to Bay Area regulations`;
 
     if (caseContext) {
-        basePrompt += `
-
-Current Case Context:
+        basePrompt += `\n\nCurrent Case Context:
 Case #${caseContext.id}: ${caseContext.title}
 Issues: ${caseContext.issues.join(', ')}
 Outcome: ${caseContext.outcome.join(', ')}`;
@@ -53,9 +61,7 @@ Outcome: ${caseContext.outcome.join(', ')}`;
     if (pdfUrl) {
         const pdfContext = await getPdfContext(pdfUrl);
         if (pdfContext) {
-            basePrompt += `
-
-Relevant Case Document Content:
+            basePrompt += `\n\nRelevant Case Document Content:
 ${pdfContext}`;
         }
     }

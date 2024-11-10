@@ -24,7 +24,7 @@ export const cases: Case[] = [
           "Order to address mold and carpet issues",
           "Installation of new stove and fan"
       ],
-      "pdfUrl": "/petition/California_1556 2023.11.21 HODecision_Redacted.pdf"
+      "pdfUrl": "http://rent-cases.replit.app/petition/California_1556 2023.11.21 HODecision_Redacted.pdf"
   }
 
 ,
