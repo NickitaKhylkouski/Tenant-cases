@@ -80,7 +80,7 @@ const Chat = () => {
           </Link>
           <h1 className="text-2xl font-bold text-center flex items-center gap-2">
             <MessageSquare className="w-6 h-6" />
-            Legal GPT Chat
+            Expert Chat
             {selectedCase && (
               <span className="text-sm font-normal text-gray-600">
                 (Case #{selectedCase.id})
@@ -114,7 +114,7 @@ const Chat = () => {
                   }`}
                 >
                   <p className="text-sm font-semibold mb-1">
-                    {msg.role === 'user' ? 'You' : 'Legal GPT'}
+                    {msg.role === 'user' ? 'You' : 'Expert Chat'}
                   </p>
                   <p className="text-gray-800">{msg.content}</p>
                 </div>
@@ -122,7 +122,7 @@ const Chat = () => {
             )}
             {isLoading && (
               <div className="bg-gray-50 p-4 rounded-lg mr-12">
-                <p className="text-sm font-semibold mb-1">Legal GPT</p>
+                <p className="text-sm font-semibold mb-1">Expert Chat</p>
                 <p className="text-gray-800">Thinking...</p>
               </div>
             )}
@@ -134,6 +134,24 @@ const Chat = () => {
                 <FileText className="w-4 h-4 mr-2" />
                 Using context from: Case #{selectedCase.id} - {selectedCase.title}
               </div>
+              <button 
+                className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => {
+                  setInput('Provide summary of this case');
+                  handleSubmit(new Event('submit'));
+                }}
+              >
+                Provide summary of this case
+              </button>
+              <button 
+                className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => {
+                  setInput('What are a legal grounds of this case?');
+                  handleSubmit(new Event('submit'));
+                }}
+              >
+                What are a legal grounds of this case?
+              </button>
             </div>
           )}
 

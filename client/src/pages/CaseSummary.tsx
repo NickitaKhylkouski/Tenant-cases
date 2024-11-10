@@ -28,7 +28,7 @@ const CaseSummary = () => {
           <div className="flex gap-4">
             <Link href="/chat" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <MessageSquare className="w-5 h-5 mr-2" />
-              Legal GPT
+              Expert Chat
             </Link>
             <Link href="/info" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <InfoIcon className="w-5 h-5 mr-2" />
