@@ -1,32 +1,36 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'wouter';
-import { MessageSquare, Send, ArrowLeft, FileText } from 'lucide-react';
-import { cases } from '../cases';
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "wouter";
+import { MessageSquare, Send, ArrowLeft, FileText } from "lucide-react";
+import { cases } from "../cases";
 
 interface Message {
-  role: 'user' | 'assistant';
+  role: "user" | "assistant";
   content: string;
 }
 
 const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [selectedCase, setSelectedCase] = useState<typeof cases[0] | null>(null);
+  const [selectedCase, setSelectedCase] = useState<(typeof cases)[0] | null>(
+    null,
+  );
   const [location] = useLocation();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
-    const caseId = params.get('case');
+    const caseId = params.get("case");
     if (caseId) {
-        const foundCase = cases.find(c => c.id === parseInt(caseId, 10));
-        if (foundCase) {
-            setSelectedCase(foundCase);
-            setMessages([{
-                role: 'assistant',
-                content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
-            }]);
-        }
+      const foundCase = cases.find((c) => c.id === parseInt(caseId, 10));
+      if (foundCase) {
+        setSelectedCase(foundCase);
+        setMessages([
+          {
+            role: "assistant",
+            content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`,
+          },
+        ]);
+      }
     }
   }, []);
 
@@ -35,38 +39,46 @@ const Chat = () => {
     if (!input.trim() || isLoading) return;
 
     const userMessage = input.trim();
-    setInput('');
-    setMessages(prev => [...prev, { role: 'user', content: userMessage }]);
+    setInput("");
+    setMessages((prev) => [...prev, { role: "user", content: userMessage }]);
     setIsLoading(true);
 
     try {
-        const response = await fetch('/api/chat', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                message: userMessage,
-                pdfUrl: selectedCase?.pdfUrl,
-                caseContext: selectedCase ? {
-                    id: selectedCase.id,
-                    title: selectedCase.title,
-                    issues: selectedCase.issues,
-                    outcome: selectedCase.outcome
-                } : null
-            }),
-        });
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          message: userMessage,
+          pdfUrl: selectedCase?.pdfUrl,
+          caseContext: selectedCase
+            ? {
+                id: selectedCase.id,
+                title: selectedCase.title,
+                issues: selectedCase.issues,
+                outcome: selectedCase.outcome,
+              }
+            : null,
+        }),
+      });
 
-        if (!response.ok) throw new Error('Failed to get response');
+      if (!response.ok) throw new Error("Failed to get response");
 
-        const data = await response.json();
-        setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
+      const data = await response.json();
+      setMessages((prev) => [
+        ...prev,
+        { role: "assistant", content: data.message },
+      ]);
     } catch (error) {
-        console.error('Error:', error);
-        setMessages(prev => [...prev, { 
-            role: 'assistant', 
-            content: 'Sorry, I encountered an error. Please try again.' 
-        }]);
+      console.error("Error:", error);
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "Sorry, I encountered an error. Please try again.",
+        },
+      ]);
     } finally {
-        setIsLoading(false);
+      setIsLoading(false);
     }
   };
 
@@ -74,7 +86,10 @@ const Chat = () => {
     <div className="min-h-screen bg-gray-50 flex flex-col">
       <div className="w-full max-w-4xl mx-auto p-4 flex-1 flex flex-col">
         <div className="flex items-center justify-between mb-6">
-          <Link href="/" className="inline-flex items-center text-blue-600 hover:text-blue-800">
+          <Link
+            href="/"
+            className="inline-flex items-center text-blue-600 hover:text-blue-800"
+          >
             <ArrowLeft className="w-5 h-5 mr-2" />
             Back to Cases
           </Link>
@@ -95,11 +110,16 @@ const Chat = () => {
             {messages.length === 0 ? (
               <div className="text-center text-gray-500 mt-8">
                 <MessageSquare className="w-12 h-12 mx-auto mb-4 opacity-20" />
-                <p>Ask me anything about landlord-tenant law in the Bay Area!</p>
-                <p className="text-sm mt-2">I can help with rent control, evictions, repairs, and more.</p>
+                <p>
+                  Ask me anything about landlord-tenant law in the Bay Area!
+                </p>
+                <p className="text-sm mt-2">
+                  I can help with rent control, evictions, repairs, and more.
+                </p>
                 {!selectedCase && (
                   <p className="text-sm mt-4">
-                    Tip: Open a specific case and click "Chat about this case" for context-aware responses.
+                    Tip: Open a specific case and click "Chat about this case"
+                    for context-aware responses.
                   </p>
                 )}
               </div>
@@ -108,15 +128,24 @@ const Chat = () => {
                 <div
                   key={idx}
                   className={`p-4 rounded-lg ${
-                    msg.role === 'user'
-                      ? 'bg-blue-50 ml-12'
-                      : 'bg-gray-50 mr-12'
+                    msg.role === "user"
+                      ? "bg-blue-50 ml-12"
+                      : "bg-gray-50 mr-12"
                   }`}
                 >
                   <p className="text-sm font-semibold mb-1">
-                    {msg.role === 'user' ? 'You' : 'Expert Chat'}
+                    {msg.role === "user" ? "You" : "Expert Chat"}
                   </p>
-                  <p className="text-gray-800">{msg.content}</p>
+                  <pre
+                    className="text-gray-800"
+                    style={{
+                      maxWidth: "800px",
+                      whiteSpace: "pre-wrap",
+                      wordWrap: "break-word",
+                    }}
+                  >
+                    {msg.content}
+                  </pre>
                 </div>
               ))
             )}
@@ -132,25 +161,35 @@ const Chat = () => {
             <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
               <div className="flex items-center text-sm text-blue-600">
                 <FileText className="w-4 h-4 mr-2" />
-                Using context from: Case #{selectedCase.id} - {selectedCase.title}
+                Using context from: Case #{selectedCase.id} -{" "}
+                {selectedCase.title}
               </div>
-              <button 
+              <button
                 className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
                 onClick={() => {
-                  setInput('Provide summary of this case');
-                  handleSubmit(new Event('submit'));
+                  setInput("Provide summary of this case");
+                  handleSubmit(new Event("submit"));
                 }}
               >
                 Provide summary of this case
               </button>
-              <button 
+              <button
                 className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
                 onClick={() => {
-                  setInput('What are a legal grounds of this case?');
-                  handleSubmit(new Event('submit'));
+                  setInput("What are a legal grounds of this case?");
+                  handleSubmit(new Event("submit"));
                 }}
               >
                 What are a legal grounds of this case?
+              </button>
+              <button
+                className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => {
+                  setInput("Provide timeline of this case");
+                  handleSubmit(new Event("submit"));
+                }}
+              >
+                Provide timeline of this case
               </button>
             </div>
           )}
