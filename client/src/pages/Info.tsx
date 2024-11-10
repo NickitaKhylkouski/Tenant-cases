@@ -43,6 +43,10 @@ const Info = () => {
                   <span>Real-time search functionality across all cases</span>
                 </li>
                 <li className="flex items-start">
+                  <span className="mr-2">💬</span>
+                  <span>Expert Chat assistance for case-specific guidance</span>
+                </li>
+                <li className="flex items-start">
                   <span className="mr-2">🏷️</span>
                   <span>Category indicators using relevant emojis</span>
                 </li>

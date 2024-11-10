@@ -36,7 +36,7 @@ const getPdfContext = async (pdfPath: string): Promise<string> => {
 };
 
 const createSystemPrompt = async (pdfUrl?: string, caseContext?: any) => {
-    let basePrompt = `You are a legal expert specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
+    let basePrompt = `You are an expert consultant specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
 1. Be concise and under 200 words per response
 2. Focus ONLY on landlord-tenant law topics including:
    - Rent control and tenant protections

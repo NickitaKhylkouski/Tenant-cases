@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Search, Info as InfoIcon, MessageSquare, FileText } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, Info as InfoIcon, MessageSquare, FileText, Users } from 'lucide-react';
 import { Link } from 'wouter';
 import { Case, cases } from '../cases';
 
@@ -26,6 +26,15 @@ const CaseSummary = () => {
             Rental Case Summaries
           </h1>
           <div className="flex gap-4">
+            <a
+              href="https://clsepa.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
+            >
+              <Users className="w-5 h-5 mr-2" />
+              Contact Legal Teams
+            </a>
             <Link href="/chat" className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors">
               <MessageSquare className="w-5 h-5 mr-2" />
               Expert Chat
