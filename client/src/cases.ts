@@ -9,437 +9,543 @@ export interface Case {
 
 export const cases: Case[] = [
   {
-    id: 1,
-    title: "Heating and Window Issues",
-    emoji: "🏠",
-    issues: [
-      "Single-pane windows did not provide weather protection",
-      "Heating system did not adequately heat the unit"
-    ],
-    outcome: [
-      "Tenant did not meet the burden of proof for the window issue",
-      "Tenant awarded a 50% rent reduction for three months for the heating issue"
-    ],
-    pdfUrl: "/pdfs/case-1-heating-and-window-issues.pdf"
-  },
+      "id": 1,
+      "title": "Zavala Vasquez v. Sanchez Morado",
+      "emoji": "🏠",
+      "issues": [
+          "Mold in multiple rooms",
+          "Damaged, foul-smelling carpet",
+          "Single functioning electrical outlet",
+          "Non-functioning stove and burners"
+      ],
+      "outcome": [
+          "Reduction in monthly rent by $300",
+          "Reimbursement for previous overcharges",
+          "Order to address mold and carpet issues",
+          "Installation of new stove and fan"
+      ],
+      "pdfUrl": "/petition/California_1556 2023.11.21 HODecision_Redacted.pdf"
+  }
+
+,
   {
-    id: 2,
-    title: "Rent Increase and Low Income Case",
-    emoji: "💰",
-    issues: [
-      "Rent increase of almost 10%",
-      "Tenant's income was significantly lower",
-      "Landlord non-compliant with registration"
-    ],
-    outcome: [
-      "Tenant awarded a reduction in rent",
-      "Rebate for banked increases paid since Sept. 1, 2022"
-    ],
-    pdfUrl: "/pdfs/case-2-rent-increase-and-low-income-case.pdf"
-  },
+      "id": 2,
+      "title": "Campos v. The Arbors at Mountain View",
+      "emoji": "💰",
+      "issues": [
+          "Unlawful rent increases",
+          "Peeling paint and mold in bathrooms",
+          "Cracked flooring in living room",
+          "Non-functioning kitchen stove"
+      ],
+      "outcome": [
+          "Rent recalculated with reduction to $2,033.39",
+          "Reimbursement of overpaid rent",
+          "Order for prompt repairs to mold and stove",
+          "Further inspections scheduled"
+      ],
+      "pdfUrl": "/petition/California_2200 2024.04.24 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 3,
-    title: "Severe Mold Growth Case",
-    emoji: "💧",
-    issues: [
-      "Extensive mold growth over time",
-      "Landlord failed to make timely repairs",
-      "Mold negatively impacted tenant health"
-    ],
-    outcome: [
-      "Tenants awarded $7,050.60 for habitability reduction"
-    ],
-    pdfUrl: "/pdfs/case-3-severe-mold-growth.pdf"
-  },
+      "id": 3,
+      "title": "Williams v. Shoreline Village LLC",
+      "emoji": "🏘️",
+      "issues": [
+          "Proposed 10% rent increase",
+          "Hardship due to limited income",
+          "Base rent improperly calculated",
+          "Excessive financial strain on tenant"
+      ],
+      "outcome": [
+          "Rent capped at $1,444.58",
+          "Request for hardship reduction granted",
+          "Future increases limited under hardship clause",
+          "Tenant remains in affordable housing"
+      ],
+      "pdfUrl": "/petition/Central_511 2024.01.11 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 4,
-    title: "Multiple Habitability Issues",
-    emoji: "🔧",
-    issues: [
-      "Water leak causing strong smells",
-      "Broken windows and cracks in walls",
-      "Pest/rodent infestation"
-    ],
-    outcome: [
-      "Tenant awarded $46,834.50 in rent refund",
-      "Ongoing monthly rent reduction of $310.50"
-    ],
-    pdfUrl: "/pdfs/case-4-multiple-habitability-issues.pdf"
-  },
+      "id": 4,
+      "title": "Rosas Torres v. Tenant Planet Inc.",
+      "emoji": "📈",
+      "issues": [
+          "Improper 10% rent increase",
+          "Discrepancy in rent calculations",
+          "Lack of property registration",
+          "Unresponsiveness in mediation attempts"
+      ],
+      "outcome": [
+          "Rent corrected to $2,402.40",
+          "5% rent increase enforced",
+          "Tenant compensated for overpayments",
+          "Property compliance required"
+      ],
+      "pdfUrl": "/petition/Chiquita_465 2023.08.04 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 5,
-    title: "Water Damage and Mold Case",
-    emoji: "💧",
-    issues: [
-      "Water leak from roof caused mold",
-      "Landlord took two months to address the leak",
-      "Tenant's elderly mother could not use parts of the unit"
-    ],
-    outcome: [
-      "Tenant awarded a 25% rent reduction",
-      "Rent refund of $1,293.00 awarded"
-    ],
-    pdfUrl: "/pdfs/case-5-water-damage-mold.pdf"
-  },
+      "id": 5,
+      "title": "Unlawful Rent Increase Case: Naranjo vs. Cervantes",
+      "emoji": "🏠",
+      "issues": [
+          "Unauthorized rent increase in September 2022",
+          "Multiple rent increases within 12-month period",
+          "Lack of registration with Rent Stabilization Program",
+          "Unspecified utilities charged monthly"
+      ],
+      "outcome": [
+          "Rent reduced to base rate of $1,795",
+          "Awarded a rent rebate of $89 monthly",
+          "No compliance penalties applied",
+          "Continued utility charges confirmed lawful"
+      ],
+      "pdfUrl": "/petition/Church_31 2023.02.13 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 6,
-    title: "Rent Concessions Dispute",
-    emoji: "💰",
-    issues: [
-      "Landlord did not factor rent concessions into base rent",
-      "Tenant faced unlawful rent increase"
-    ],
-    outcome: [
-      "No monetary award specified"
-    ],
-    pdfUrl: "/pdfs/case-6-rent-concessions-dispute.pdf"
-  },
+      "id": 6,
+      "title": "Compliance Dispute: Naranjo vs. Cervantes",
+      "emoji": "🔧",
+      "issues": [
+          "Delayed rent credits from initial ruling",
+          "Dispute on utility overcharges",
+          "Rent not adjusted to base amount",
+          "Communication delays from landlord"
+      ],
+      "outcome": [
+          "Full rent credit of $759 monthly until compliance",
+          "Refund of excess rent charges, $500 deposit included",
+          "Utility charge capped per initial ruling",
+          "Base rent confirmed at $1,795 monthly"
+      ],
+      "pdfUrl": "/petition/Church_31 2024.03.25 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 7,
-    title: "Banked Rent Increases Hardship",
-    emoji: "💰",
-    issues: [
-      "Landlord attempted to apply banked rent increases",
-      "Tenant argued banked increases would be an undue hardship"
-    ],
-    outcome: [
-      "Tenant did not have to pay banked rent increases"
-    ],
-    pdfUrl: "/pdfs/case-7-banked-rent-increases-hardship.pdf"
-  },
+      "id": 7,
+      "title": "Incorrect Base Rent Calculation: West & Snow vs. Americana I, LLC",
+      "emoji": "💼",
+      "issues": [
+          "Base rent calculation excludes rent concessions",
+          "Pet rent added without correct adjustment",
+          "Increased security deposit unlawfully added",
+          "Rent raised without allowance for concessions"
+      ],
+      "outcome": [
+          "Base rent adjusted to $2,020.51",
+          "Refund of $6,072 for excess rent",
+          "Monthly pet rent capped at $50",
+          "Adjusted security deposit credited"
+      ],
+      "pdfUrl": "/petition/Continental_707 2023.05.19 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 8,
-    title: "Bathroom and Parking Issues",
-    emoji: "🔧",
-    issues: [
-      "Peeling reglazing in the bathroom",
-      "Overflowing trash bins attracting vermin",
-      "Trash bins blocking assigned parking"
-    ],
-    outcome: [
-      "$4,850 awarded for bathroom and trash issues",
-      "$100 monthly rent reduction until parking issue resolved"
-    ],
-    pdfUrl: "/pdfs/case-8-bathroom-parking-issues.pdf"
-  },
+      "id": 8,
+      "title": "Rent Compliance Review: West & Snow vs. Americana I, LLC",
+      "emoji": "📄",
+      "issues": [
+          "Non-compliance with prior rent adjustment",
+          "Rent overpayments continuing post-ruling",
+          "Delayed rent credit adjustments",
+          "Refunds issued as credits instead of checks"
+      ],
+      "outcome": [
+          "Overcharge refund of $6,072 credited",
+          "Base rent adjusted to $2,030.67 monthly",
+          "Additional credits of $1,509.49 for excess",
+          "Full compliance mandated by February 2024"
+      ],
+      "pdfUrl": "/petition/Continental_707 2024.03.04 HOCPDecision_Redacted.pdf"
+  }
+,
   {
-    id: 9,
-    title: "Bedroom Mold and Water Damage",
-    emoji: "💧",
-    issues: [
-      "Mold in bedroom from ceiling leak",
-      "Water leak in the parking lot",
-      "Cracked bedroom walls"
-    ],
-    outcome: [
-      "$5,100 awarded for various issues",
-      "$150 monthly rent reduction until issues resolved"
-    ],
-    pdfUrl: "/pdfs/case-9-bedroom-mold-water-damage.pdf"
-  },
+      "id": 9,
+      "title": "Habitability Issue: Saravia vs. Solano Apartments LP",
+      "emoji": "🏚️",
+      "issues": [
+          "Windows not replaced within promised timeframe",
+          "Heating system inadequate during winter",
+          "Cold air leaking into bedrooms",
+          "High utility bills due to poor insulation"
+      ],
+      "outcome": [
+          "Rent credit of $139 for delayed window replacement",
+          "No further award for heating issues",
+          "Heating system adjustments mandated",
+          "Resolution of heating complaint in March 2023"
+      ],
+      "pdfUrl": "/petition/Crestview_1050 2023.08.31 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 10,
-    title: "Secondhand Smoke and Base Rent Dispute",
-    emoji: "⚖️",
-    issues: [
-      "Incorrect base rent calculation",
-      "Unlawful rent increases",
-      "Secondhand smoke from another unit"
-    ],
-    outcome: [
-      "$11,722.03 awarded for habitability violations",
-      "$11,016 awarded for secondhand smoke issues"
-    ],
-    pdfUrl: "/pdfs/case-10-secondhand-smoke-base-rent-dispute.pdf"
-  },
+      "id": 10,
+      "title": "Symekher vs. Del Medio Manor, LLP",
+      "emoji": "🏠",
+      "issues": [
+          "Unexpected rent increase by 10%",
+          "Tenant income below area median",
+          "Landlord used 'banked increases' strategy"
+      ],
+      "outcome": [
+          "Rent reduction ordered for undue hardship",
+          "Rebate for rent increases since Sept. 1, 2022"
+      ],
+      "pdfUrl": "/petition/Del Medio_141 2022.11.04 HODecision_Redacted.pdf"
+  }
+,
   {
-    id: 11,
-    title: "Property Registration and Pest Issues",
-    emoji: "🏠",
-    issues: [
-      "Unregistered property with RSP",
-      "Ant and spider infestation",
-      "Cloudy and discolored water"
-    ],
-    outcome: [
-      "The tenant was awarded $460",
-      "$230 for the security gate issue and $230 for the ant infestation"
-    ],
-    pdfUrl: "/pdfs/case-11-property-registration-pest-issues.pdf"
-  },
-  {
-    id: 12,
-    title: "Outdoor Patio Maintenance Case",
-    emoji: "🔧",
-    issues: [
-      "Cracked and uneven outdoor patio",
-      "Tenant requested a rent reduction",
-      "No evidence submitted for maintenance violation"
-    ],
-    outcome: [
-      "Rent was reduced by 5%",
-      "Tenant to receive $748.36 in rent reimbursement",
-      "Rent reduced to $710.95 until repairs are completed"
-    ],
-    pdfUrl: "/pdfs/case-12-outdoor-patio-maintenance.pdf"
-  },
-  {
-    id: 13,
-    title: "Roach Infestation and Noise Issues",
-    emoji: "🏠",
-    issues: [
-      "Reoccurring roach infestation",
-      "Noise complaints from a neighboring tenant",
-      "Tenant requested a rent reduction/rebate"
-    ],
-    outcome: [
-      "Rent was reduced by 7.5%",
-      "Tenant awarded $1083.55 in rent reimbursement"
-    ],
-    pdfUrl: "/pdfs/case-13-roach-infestation-noise-issues.pdf"
-  },
-  {
-    id: 14,
-    title: "Property Management Issues",
-    emoji: "🔧",
-    issues: [
-      "Property management and maintenance concerns",
-      "Issues with elevator, lights, bugs, paths, trees, and creek",
-      "Tenants requested a rent reduction"
-    ],
-    outcome: [
-      "Rent was reduced by 7.5%",
-      "Tenants awarded $268.56 in reimbursement"
-    ],
-    pdfUrl: "/pdfs/case-14-property-management-issues.pdf"
-  },
-  {
-    id: 15,
-    title: "Multiple Rent Increases Case",
-    emoji: "💰",
-    issues: [
-      "Landlord failed to register the property with the rent stabilization program",
-      "Landlord increased rent twice within a twelve-month period"
-    ],
-    outcome: [
-      "Tenant awarded a $2,209.00 refund"
-    ],
-    pdfUrl: "/pdfs/case-15-multiple-rent-increases.pdf"
-  },
-  {
-    id: 16,
-    title: "Water Damage and Rent Rollback",
-    emoji: "💧",
-    issues: [
-      "Landlord did not roll back rent when the rent stabilization law passed",
-      "The unit had water damage and a decrease in housing services"
-    ],
-    outcome: [
-      "Tenant awarded $9,480.67 plus an ongoing reduction of $475.00 per month"
-    ],
-    pdfUrl: "/pdfs/case-16-water-damage-rent-rollback.pdf"
-  },
-  {
-    id: 17,
-    title: "Utility Charges and Security Deposit",
-    emoji: "💰",
-    issues: [
-      "New utility charges added to lease",
-      "Increase in security deposit",
-      "Lost records from previous owners"
-    ],
-    outcome: [
-      "No decision specified in the source"
-    ],
-    pdfUrl: "/pdfs/case-17-utility-charges-security-deposit.pdf"
-  },
-  {
-    id: 18,
-    title: "Mold Case Appeal",
-    emoji: "⚖️",
-    issues: [
-      "Landlord failed to comply with prior mold case decision",
-      "Landlord argued tenants contributed to the mold",
-      "Landlord argued the photo was inaccurate"
-    ],
-    outcome: [
-      "Appeal denied, previous decision upheld",
-      "$7,050.60 rent refund for the tenants"
-    ],
-    pdfUrl: "/pdfs/case-18-mold-case-appeal.pdf"
-  },
-  {
-    id: 19,
-    title: "Household Income Disclosure Case",
-    emoji: "⚖️",
-    issues: [
-      "Tenant did not disclose household member income",
-      "Tenant had inadequate income",
-      "Landlord non-compliant with registration"
-    ],
-    outcome: [
-      "Tenant awarded a reduction in rent",
-      "Reduction equivalent to banked increases after Oct. 9, 2022"
-    ],
-    pdfUrl: "/pdfs/case-19-household-income-disclosure.pdf"
-  },
-  {
-    id: 20,
-    title: "Late Petition Filing Case",
-    emoji: "⚖️",
-    issues: [
-      "Tenant filed petition late",
-      "Landlord did not give banked increase notices",
-      "Tenant's income was significantly lower"
-    ],
-    outcome: [
-      "Tenant awarded a reduction in rent",
-      "Reduction equal to banked increases after Oct. 9, 2022"
-    ],
-    pdfUrl: "/pdfs/case-20-late-petition-filing.pdf"
-  },
-  {
-    id: 21,
-    title: "Compliance Hearing Case",
-    emoji: "⚖️",
-    issues: [
-      "Compliance hearing for previous case",
-      "Tenant argued repairs were not completed",
-      "Gap under the door allowed pests entry"
-    ],
-    outcome: [
-      "Landlord found to be in partial compliance",
-      "Ongoing rent rebate for September - November 2023"
-    ],
-    pdfUrl: "/pdfs/case-21-compliance-hearing.pdf"
-  },
-  {
-    id: 22,
-    title: "Utility Fees and Rent Concession",
-    emoji: "💰",
-    issues: [
-      "Landlord incorrectly applied rent concession to base rent",
-      "Landlord excluded utility fees from the base rent calculation"
-    ],
-    outcome: [
-      "Tenant awarded a $7,321.44 credit"
-    ],
-    pdfUrl: "/pdfs/case-22-utility-fees-rent-concession.pdf"
-  },
+      "id": 11,
+      "title": "Antonova vs. Del Medio Manor, LLP",
+      "emoji": "💰",
+      "issues": [
+          "Household income below 120% AMI",
+          "Tenant experiencing financial hardship",
+          "Rent increased despite hardship claim"
+      ],
+      "outcome": [
+          "Temporary rent reduction awarded",
+          "Rebate applied for recent increases"
+      ],
+      "pdfUrl": "/petition/Del Medio_141 2022.11.08 HODecision_Redacted.pdf"
+  }
+,
+        {
+            "id": 12,
+            "title": "Tanaka vs. Del Medio Manor, LLP",
+            "emoji": "🏠",
+            "issues": [
+                "Rent increase despite low income",
+                "Dispute over girlfriend's financial contribution",
+                "Landlord non-compliant with registration"
+            ],
+            "outcome": [
+                "Rent modification applied for hardship",
+                "Partial rebate for recent rent increases"
+            ],
+            "pdfUrl": "/petition/Del Medio_141 2022.11.18 HODecision_Redacted.pdf"
+        }
+,
+              {
+                  "id": 13,
+                  "title": "Pauck vs. Del Medio Manor, LLP",
+                  "emoji": "💸",
+                  "issues": [
+                      "Tenant income below area standard",
+                      "Rent increased despite tenant age (senior)",
+                      "Landlord unregistered property until Oct 2022"
+                  ],
+                  "outcome": [
+                      "Rent adjusted for hardship and age",
+                      "Reimbursement for banked rent increases"
+                  ],
+                  "pdfUrl": "/petition/DelMedio_141 2022.11.16 HODecision_Redacted.pdf"
+              }
+,
+                    {
+                        "id": 14,
+                        "title": "Hernandez & Gonzalez vs. Highland Garden Apartments",
+                        "emoji": "🌧️",
+                        "issues": [
+                            "Mold growth due to wall moisture",
+                            "Delayed repairs by landlord",
+                            "Health concerns due to mold exposure"
+                        ],
+                        "outcome": [
+                            "Tenant awarded $7,050.60 for habitability reduction",
+                            "Reimbursement for persistent maintenance issues"
+                        ],
+                        "pdfUrl": "/petition/Escuela_222 2023.10.16 HODecision_Redacted.pdf"
+                    }
+,
+  { id: 15, title: "Hernandez vs Highland Garden Apartments", emoji: "🏠", issues: [ "Severe mold due to water leak", "Humidity issues on living room wall", "No action for two years", "Furniture moved repeatedly to address mold" ], outcome: [ "Tenant awarded $7,050.60 rent refund", "40% reduction in property value awarded", "Landlord held liable for reduced habitability", "Landlord disputed tenant's maintenance claims" ], pdfUrl: "/petition/Escuela_222 2024.01.25 AppealDecision_Redacted.pdf" },
+  { id: 16, title: "Castillo vs Roque", emoji: "💰", issues: [ "Electrical issues in apartment outlets", "Severe cockroach infestation", "Water heater provided cold water", "Basement flooding from kitchen sink leak" ], outcome: [ "Tenant awarded downward rent adjustment", "Issues caused major habitability reduction", "Repairs delayed; no rent paid from May 2022", "City inspection accelerated needed repairs" ], pdfUrl: "/petition/Higdon_1826 2023.02.23 HODecision_Redacted.pdf" }
+
+,
+  { id: 17, title: "Yaghoubzadeh vs TFT Investments", emoji: "🏚️", issues: [ "Mold in garage and living room", "Living room wall leak not repaired", "Garage roof tarp only temporary fix", "Repeated tenant requests for maintenance" ], outcome: [ "Tenant awarded $1,293 rent refund", "20% rent reduction due to mold", "Roof leak repair delays cited", "Landlord's compliance insufficient" ], pdfUrl: "/petition/Montecito_1260 2023.10.24 AppealDecision_Redacted.pdf" },
+    {
+      id: 18,
+      title: "Castro vs Washington Square",
+      emoji: "🏠",
+      issues: [
+          "Unnotified rent increase for June-August 2022",
+          "Tenant struggled with increased rent",
+          "Lack of prior notice on back rent",
+          "Balance due unexpectedly during pandemic"
+      ],
+      outcome: [
+          "Tenant paid increased rent of $2,510",
+          "No monetary award adjustment"
+      ],
+      pdfUrl: "/petition/Montecito_1375 2022.12.14 HODecision_Redacted.pdf"
+    },
+    {
+      id: 19,
+      title: "Toepper vs Avery Shadows",
+      emoji: "💰",
+      issues: [
+          "Banked rent increase exceeded hardship limits",
+          "Petitioner's income mostly allocated to rent",
+          "Petitioner is senior, 65+ years old",
+          "Rent increased to $2,247 including back increases"
+      ],
+      outcome: [
+          "Reduced rent to alleviate financial hardship",
+          "Petitioner received rent adjustment"
+      ],
+      pdfUrl: "/petition/NShoreline_750 2022.12.08 HODecision_Redacted.pdf"
+    },
+    {
+      id: 20,
+      title: "Grigorov vs SI VI LLC",
+      emoji: "🏠",
+      issues: [
+          "Base rent miscalculated with concessions",
+          "Rent increased without accurate base rent",
+          "Tenants billed for utilities, insurance, trash",
+          "Incorrect application of rent adjustments"
+      ],
+      outcome: [
+          "Refund of $1,454.95 to tenants",
+          "Corrected base rent calculations"
+      ],
+      pdfUrl: "/petition/NWhisman_100 2023.03.23 HODecision_Redacted.pdf"
+    },
+    {
+      id: 21,
+      title: "Schwarz vs SI VI LLC",
+      emoji: "💰",
+      issues: [
+          "Rent concessions not included in base rent",
+          "Base rent improperly calculated",
+          "Failure to apply concession adjustment",
+          "Utilities billed separately without adjustment"
+      ],
+      outcome: [
+          "Downward rent adjustment awarded",
+          "Improper calculations corrected"
+      ],
+      pdfUrl: "/petition/NWhisman_100 2024.03.14 HODecision_Redacted.pdf"
+    },
+    {
+      id: 22,
+      title: "Lambert vs Cervantes LLC",
+      emoji: "🏠",
+      issues: [
+          "Unregistered property under rent stabilization",
+          "Unauthorized rent increase post initial term",
+          "Rent concessions improperly documented",
+          "RUBS utility billing disputed by tenant"
+      ],
+      outcome: [
+          "Adjustment to base rent for compliance",
+          "Refund of excess rent charged"
+      ],
+      pdfUrl: "/petition/Park_880 2023.04.12 HODecision_Redacted (1).pdf"
+    }
+,
   {
     id: 23,
-    title: "Rent Stabilization Information Case",
-    emoji: "⚖️",
+    title: "Nwokidu vs Cervantes",
+    emoji: "🏠",
     issues: [
-      "Landlord did not include rent stabilization information in the lease",
-      "Landlord incorrectly calculated base rent after the lease expired"
+      "Increased rent above lawful base",
+      "Failure to notify of rent control",
+      "Unregistered property with rent stabilization program",
+      "Dispute over unpaid late fees"
     ],
     outcome: [
-      "Tenant awarded a $309.76 refund"
+      "Rent rolled back to lawful base",
+      "Late fees claim denied",
+      "Rent refund awarded for overcharges",
+      "Ongoing rent reduction of $50"
     ],
-    pdfUrl: "/pdfs/case-23-rent-stabilization-information.pdf"
+    pdfUrl: "/petition/Park_880 2023.04.12 HODecision_Redacted (2).pdf"
   },
   {
     id: 24,
-    title: "Base Rent Calculation Case",
+    title: "Hammer vs Cervantes",
     emoji: "💰",
     issues: [
-      "Landlord did not mention rent stabilization in the lease",
-      "Landlord incorrectly calculated base rent after lease expired"
+      "Excessive rent increase",
+      "No rent stabilization notice",
+      "Unregistered rental property",
+      "Additional charges without explanation"
     ],
     outcome: [
-      "Tenant awarded a $1,709.75 refund"
+      "Rent partially refunded for overpayment",
+      "Rent reset to prior lawful amount",
+      "Registration penalty applied to landlord",
+      "Ongoing $45 rent reduction"
     ],
-    pdfUrl: "/pdfs/case-24-base-rent-calculation.pdf"
+    pdfUrl: "/petition/Park_880 2023.04.13 HODecision_Redacted.pdf"
   },
   {
     id: 25,
-    title: "Mold and Rent Increase Dispute",
-    emoji: "💧",
+    title: "Altuner vs WRL LLC",
+    emoji: "🏠",
     issues: [
-      "Mold in rental unit",
-      "Unwanted rent increase",
-      "Non-functioning kitchen lights"
+      "Unauthorized rent increase",
+      "Frequent utility overcharges",
+      "No lawful increase notification",
+      "No rent rollback compliance"
     ],
     outcome: [
-      "$8,217.06 awarded to the tenant",
-      "Monthly rent credits issued to the tenant",
-      "Landlord must maintain the property"
+      "Utility refund of $1,784 awarded",
+      "Rent rollback adjustment made",
+      "Unlawful increase rescinded",
+      "Ongoing $55 rent reduction"
     ],
-    pdfUrl: "/pdfs/case-25-mold-rent-increase-dispute.pdf"
+    pdfUrl: "/petition/Rengstorff_429 2023.02.17 HODecision_Redacted.pdf"
   },
   {
     id: 26,
-    title: "Unlawful Rent Increase and Maintenance Issues",
-    emoji: "💰",
+    title: "Sampayo vs MVCCC",
+    emoji: "💧",
     issues: [
-      "Unlawful rent increase based on incorrect base rent",
-      "Mold in the bathrooms",
-      "Dishwasher not working"
+      "Water intrusion in bedroom",
+      "No response to mold and odor",
+      "Gardening service eliminated",
+      "No lawful rent rollback"
     ],
     outcome: [
-      "$7,596.30 awarded for unlawful rent",
-      "$800.00 awarded for failure to maintain or repair",
-      "Correct base rent determined"
+      "Refund of $24,347.67 for rent overages",
+      "Ongoing 25% rent reduction",
+      "Monthly reduction for lost services",
+      "Maintenance orders issued for repairs"
     ],
-    pdfUrl: "/pdfs/case-26-unlawful-rent-increase-maintenance.pdf"
+    pdfUrl: "/petition/Rich_939 2024.02.01 HODecision_Redacted.pdf"
   },
   {
     id: 27,
-    title: "Low Income Tenant Hardship Case",
-    emoji: "💰",
+    title: "Rivera vs Chen & Pan",
+    emoji: "⚡",
     issues: [
-      "Tenant hardship due to low income",
-      "Rent increase included a banked increase",
-      "Incorrectly calculated base rent"
+      "Utility overcharges imposed",
+      "Refusal to provide itemized billing",
+      "Non-transparent utility calculations",
+      "Higher charges after ownership change"
     ],
     outcome: [
-      "Banked rent increase removed",
-      "Lawful rent set at $1,485.75",
-      "Tenant awarded refund for rent overpayments"
+      "Refund of excess utility charges",
+      "Monthly reduction in utility fees",
+      "Order to clarify utility charges",
+      "Rent set to lawful base"
     ],
-    pdfUrl: "/pdfs/case-27-low-income-tenant-hardship.pdf"
-  },
+    pdfUrl: "/petition/Villa_1643 2023.06.30 HODecision_Redacted.pdf"
+  }
+,
   {
     id: 28,
-    title: "Simple Rent Overcharge Case",
-    emoji: "💰",
+    title: "Rivera vs Richards",
+    emoji: "🏠",
     issues: [
-      "Unlawful rent increase",
-      "Tenant overcharged rent"
+      "Mold from leaking ceiling in bedroom",
+      "Water leak onto car in parking lot",
+      "Slow shower water flow",
+      "Cracked bedroom walls"
     ],
     outcome: [
-      "$1,487.20 awarded to tenant plus overpayment reimbursement after August 1, 2023"
+      "Tenant awarded rent reduction",
+      "Refund for maintenance delays granted",
+      "Partial compensation for unsafe conditions"
     ],
-    pdfUrl: "/pdfs/case-28-simple-rent-overcharge.pdf"
+    pdfUrl: "/pdfs/Wentworth_1084 2024.05.06 HODecision_Redacted.pdf"
   },
   {
     id: 29,
-    title: "Multiple Illegal Rent Increases",
+    title: "Sierra vs Katz",
     emoji: "💰",
     issues: [
-      "Multiple rent increases in a 12-month period",
-      "Incorrect base rent calculation"
+      "Rent raised beyond lawful limits",
+      "Secondhand smoke infiltrating unit",
+      "Rodent infestation",
+      "Inadequate lighting in parking lot"
     ],
     outcome: [
-      "$3,040.42 rent overpayment awarded plus additional overpayments for February 2023",
-      "Landlord cannot raise rent until property is registered"
+      "Rent rollback to lawful rate",
+      "Refund of $8,039.90 for smoke",
+      "Additional $155.37 for infestation",
+      "Parking lighting refund of $1,052.25"
     ],
-    pdfUrl: "/pdfs/case-29-multiple-illegal-rent-increases.pdf"
+    pdfUrl: "/pdfs/Whitney_2489 2024.03.20 HODecision_Redacted.pdf"
   },
   {
     id: 30,
-    title: "Pet Deposit and Rent Concessions Dispute",
-    emoji: "💰",
+    title: "Maciel vs Levin",
+    emoji: "🏠",
     issues: [
-      "Unlawful rent increase due to failure to account for concessions",
-      "Landlord collected an unlawful pet deposit"
+      "Unlawful rent increase due to miscalculated base",
+      "Charging for utilities mid-lease",
+      "Peeling reglazing on bathroom fixtures",
+      "Overflowing trash attracting vermin"
     ],
     outcome: [
-      "$6,072.11 awarded for rent overpayments",
-      "$500.00 unlawful pet deposit to be refunded",
-      "Base rent rolled back"
+      "Refund of $4,686.84 for rent miscalculation",
+      "Utility charges of $956.63 refunded",
+      "Monthly rent reduced by $100 for reglazing",
+      "Credit of $400 for plumber charge"
     ],
-    pdfUrl: "/pdfs/case-30-pet-deposit-and-rent-concessions-dispute.pdf"
+    pdfUrl: "/pdfs/WMiddlefield_2120 2024.02.15 HODecision_Redacted.pdf"
+  },
+  {
+    "id": 31,
+    "title": "Wright vs Timpson Enterprises",
+    "emoji": "🏠",
+    "issues": [
+      "Hot water consistently below minimum temperature",
+      "Failure to maintain habitable premises",
+      "Tenant informed landlord of issues",
+      "Landlord did not resolve the issue in time"
+    ],
+    "outcome": [
+      "Tenant awarded 10% rent reduction",
+      "Tenant refunded $1,100 as rent rebate",
+      "Ongoing credit of $7.33 per day",
+      "Further credit if unresolved by next month"
+    ],
+    "pdfUrl": "/petition/Wright_1725 2023.06.09 HODecision_Redacted.pdf"
+  },
+  {
+    "id": 32,
+    "title": "Wright vs Timpson Enterprises",
+    "emoji": "💰",
+    "issues": [
+      "Pre-hearing conference participation issues",
+      "Incorrect health code used for temperature standard",
+      "Dispute over accurate temperature measurement",
+      "Unaddressed portable heater reimbursement"
+    ],
+    "outcome": [
+      "Decision partially remanded for further evidence",
+      "Affirmed need for adequate hot water standard",
+      "Landlord’s appeal on pre-hearing timing denied",
+      "Landlord's appeal on temperature measurement denied"
+    ],
+    "pdfUrl": "/petition/Wright_1725 2023.10.12 AppealDecision_Redacted.pdf"
+  },
+  {
+    "id": 33,
+    "title": "Wright vs Timpson Enterprises",
+    "emoji": "🏠",
+    "issues": [
+      "Minimum hot water temperature of 110°F unmet",
+      "Landlord disputed international temperature standard",
+      "Petition for inadequate habitability compliance",
+      "Dispute over rent credit calculation"
+    ],
+    "outcome": [
+      "Tenant awarded 8% rent reduction ongoing",
+      "Total refund of $2,640 awarded",
+      "Credit of $5.87 per day until resolved",
+      "Further increase if unresolved by April 2024"
+    ],
+    "pdfUrl": "/petition/Wright_1725 2024.04.03 RemandAppealDecision_Redacted.pdf"
   }
+
+
+
+
 ];

@@ -1,12 +1,32 @@
 import type { Express } from "express";
 import { OpenAI } from "openai";
+import { PythonShell } from 'python-shell';
+import { promisify } from 'util';
+import path from 'path';
 
 const openai = new OpenAI();
 
 // Import cases from CaseSummary component
 import { cases } from "../client/src/cases";
 
-const SYSTEM_PROMPT = `You are a legal expert specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
+const getPdfContext = async (pdfPath: string): Promise<string> => {
+  try {
+    const pyshell = new PythonShell('server/pdf_utils.py', {
+      mode: 'text',
+      pythonOptions: ['-u'],
+    });
+    
+    const runPython = promisify(pyshell.run).bind(pyshell);
+    const result = await runPython([pdfPath]);
+    return result.join('\n');
+  } catch (error) {
+    console.error('Error getting PDF context:', error);
+    return '';
+  }
+};
+
+const createSystemPrompt = async (pdfUrl?: string) => {
+  let basePrompt = `You are a legal expert specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
 1. Be concise and under 200 words per response
 2. Focus ONLY on landlord-tenant law topics including:
    - Rent control and tenant protections
@@ -19,33 +39,35 @@ Important Rules:
 - Always reference relevant cases from our database when applicable
 - When citing a case, use the format "Case #X" and briefly describe its relevance
 - Reject any off-topic requests
-- Keep responses practical and specific to Bay Area regulations
+- Keep responses practical and specific to Bay Area regulations`;
 
-Case Database:
-${JSON.stringify(cases, null, 2)}
+  if (pdfUrl) {
+    const pdfContext = await getPdfContext(pdfUrl);
+    if (pdfContext) {
+      basePrompt += `\n\nRelevant Case Context:\n${pdfContext}`;
+    }
+  }
 
-Response Format:
-1. Direct answer to the question
-2. Brief explanation with key points
-3. Reference to relevant case(s) from our database
-4. Relevant local regulation citation if applicable
+  basePrompt += `\n\nCase Database:\n${JSON.stringify(cases, null, 2)}`;
 
-Example Response:
-"Yes, you likely have a case. Issues with windows affecting weather protection are considered habitability violations. In Case #1, a tenant faced similar issues with single-pane windows and inadequate heating, resulting in a 50% rent reduction for three months. Your situation could warrant similar relief under California Civil Code Section 1941.1."`;
+  return basePrompt;
+};
 
 export function registerRoutes(app: Express) {
   app.post("/api/chat", async (req, res) => {
     try {
-      const { message } = req.body;
+      const { message, pdfUrl } = req.body;
 
       if (!message) {
         return res.status(400).json({ error: "Message is required" });
       }
 
+      const systemPrompt = await createSystemPrompt(pdfUrl);
+
       const completion = await openai.chat.completions.create({
         model: "gpt-4",
         messages: [
-          { role: "system", content: SYSTEM_PROMPT },
+          { role: "system", content: systemPrompt },
           { role: "user", content: message }
         ],
         temperature: 0.7,

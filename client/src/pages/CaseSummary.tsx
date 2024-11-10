@@ -95,7 +95,7 @@ const CaseSummary = () => {
                         ))}
                       </ul>
                     </div>
-                    <div className="pt-4 border-t border-gray-200">
+                    <div className="pt-4 border-t border-gray-200 flex gap-4">
                       <a
                         href={caseItem.pdfUrl}
                         target="_blank"
@@ -105,6 +105,13 @@ const CaseSummary = () => {
                         <FileText className="w-4 h-4 mr-2" />
                         View Full Case PDF
                       </a>
+                      <Link
+                        href={`/chat?case=${caseItem.id}`}
+                        className="inline-flex items-center px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors"
+                      >
+                        <MessageSquare className="w-4 h-4 mr-2" />
+                        Chat about this case
+                      </Link>
                     </div>
                   </div>
                 </div>

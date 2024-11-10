@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Link } from 'wouter';
-import { MessageSquare, Send, ArrowLeft } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'wouter';
+import { MessageSquare, Send, ArrowLeft, FileText } from 'lucide-react';
+import { cases } from '../cases';
 
 interface Message {
   role: 'user' | 'assistant';
@@ -11,6 +12,23 @@ const Chat = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [selectedCase, setSelectedCase] = useState<typeof cases[0] | null>(null);
+  const [location] = useLocation();
+
+  // Get case ID from URL if present
+  useEffect(() => {
+    const caseId = new URLSearchParams(location.split('?')[1]).get('case');
+    if (caseId) {
+      const foundCase = cases.find(c => c.id === parseInt(caseId));
+      if (foundCase) {
+        setSelectedCase(foundCase);
+        setMessages([{
+          role: 'assistant',
+          content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
+        }]);
+      }
+    }
+  }, [location]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +43,10 @@ const Chat = () => {
       const response = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message: userMessage }),
+        body: JSON.stringify({
+          message: userMessage,
+          pdfUrl: selectedCase?.pdfUrl
+        }),
       });
 
       if (!response.ok) throw new Error('Failed to get response');
@@ -54,6 +75,11 @@ const Chat = () => {
           <h1 className="text-2xl font-bold text-center flex items-center gap-2">
             <MessageSquare className="w-6 h-6" />
             Legal GPT Chat
+            {selectedCase && (
+              <span className="text-sm font-normal text-gray-600">
+                (Case #{selectedCase.id})
+              </span>
+            )}
           </h1>
           <div className="w-24"></div>
         </div>
@@ -65,6 +91,11 @@ const Chat = () => {
                 <MessageSquare className="w-12 h-12 mx-auto mb-4 opacity-20" />
                 <p>Ask me anything about landlord-tenant law in the Bay Area!</p>
                 <p className="text-sm mt-2">I can help with rent control, evictions, repairs, and more.</p>
+                {!selectedCase && (
+                  <p className="text-sm mt-4">
+                    Tip: Open a specific case and click "Chat about this case" for context-aware responses.
+                  </p>
+                )}
               </div>
             ) : (
               messages.map((msg, idx) => (
@@ -90,6 +121,15 @@ const Chat = () => {
               </div>
             )}
           </div>
+
+          {selectedCase && (
+            <div className="px-4 py-2 bg-blue-50 border-t border-blue-100">
+              <div className="flex items-center text-sm text-blue-600">
+                <FileText className="w-4 h-4 mr-2" />
+                Using context from: Case #{selectedCase.id} - {selectedCase.title}
+              </div>
+            </div>
+          )}
 
           <form onSubmit={handleSubmit} className="p-4 border-t">
             <div className="flex gap-2">
