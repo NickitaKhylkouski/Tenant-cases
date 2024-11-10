@@ -20,7 +20,7 @@ export const cases: Case[] = [
       "Tenant did not meet the burden of proof for the window issue",
       "Tenant awarded a 50% rent reduction for three months for the heating issue"
     ],
-    pdfUrl: "/pdfs/case-1-heating-windows.pdf"
+    pdfUrl: "/pdfs/case-1-heating-and-window-issues.pdf"
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const cases: Case[] = [
       "Tenant awarded a reduction in rent",
       "Rebate for banked increases paid since Sept. 1, 2022"
     ],
-    pdfUrl: "/pdfs/case-2-rent-increase.pdf"
+    pdfUrl: "/pdfs/case-2-rent-increase-and-low-income-case.pdf"
   },
   {
     id: 3,
@@ -440,6 +440,6 @@ export const cases: Case[] = [
       "$500.00 unlawful pet deposit to be refunded",
       "Base rent rolled back"
     ],
-    pdfUrl: "/pdfs/case-30-pet-deposit-rent-concessions.pdf"
+    pdfUrl: "/pdfs/case-30-pet-deposit-and-rent-concessions-dispute.pdf"
   }
 ];
