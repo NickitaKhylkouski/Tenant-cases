@@ -15,25 +15,20 @@ const Chat = () => {
   const [selectedCase, setSelectedCase] = useState<typeof cases[0] | null>(null);
   const [location] = useLocation();
 
-  // Get case ID from URL if present with improved error handling
   useEffect(() => {
-    try {
-        const params = new URLSearchParams(location.split('?')[1] || '');
-        const caseId = params.get('case');
-        if (caseId) {
-            const foundCase = cases.find(c => c.id === parseInt(caseId, 10));
-            if (foundCase) {
-                setSelectedCase(foundCase);
-                setMessages([{
-                    role: 'assistant',
-                    content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
-                }]);
-            }
+    const params = new URLSearchParams(window.location.search);
+    const caseId = params.get('case');
+    if (caseId) {
+        const foundCase = cases.find(c => c.id === parseInt(caseId, 10));
+        if (foundCase) {
+            setSelectedCase(foundCase);
+            setMessages([{
+                role: 'assistant',
+                content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
+            }]);
         }
-    } catch (error) {
-        console.error('Error parsing case parameter:', error);
     }
-  }, [location]);
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,27 +40,33 @@ const Chat = () => {
     setIsLoading(true);
 
     try {
-      const response = await fetch('/api/chat', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message: userMessage,
-          pdfUrl: selectedCase?.pdfUrl
-        }),
-      });
+        const response = await fetch('/api/chat', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                message: userMessage,
+                pdfUrl: selectedCase?.pdfUrl,
+                caseContext: selectedCase ? {
+                    id: selectedCase.id,
+                    title: selectedCase.title,
+                    issues: selectedCase.issues,
+                    outcome: selectedCase.outcome
+                } : null
+            }),
+        });
 
-      if (!response.ok) throw new Error('Failed to get response');
+        if (!response.ok) throw new Error('Failed to get response');
 
-      const data = await response.json();
-      setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
+        const data = await response.json();
+        setMessages(prev => [...prev, { role: 'assistant', content: data.message }]);
     } catch (error) {
-      console.error('Error:', error);
-      setMessages(prev => [...prev, { 
-        role: 'assistant', 
-        content: 'Sorry, I encountered an error. Please try again.' 
-      }]);
+        console.error('Error:', error);
+        setMessages(prev => [...prev, { 
+            role: 'assistant', 
+            content: 'Sorry, I encountered an error. Please try again.' 
+        }]);
     } finally {
-      setIsLoading(false);
+        setIsLoading(false);
     }
   };
 

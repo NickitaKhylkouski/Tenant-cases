@@ -25,8 +25,8 @@ const getPdfContext = async (pdfPath: string): Promise<string> => {
   }
 };
 
-const createSystemPrompt = async (pdfUrl?: string) => {
-  let basePrompt = `You are a legal expert specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
+const createSystemPrompt = async (pdfUrl?: string, caseContext?: any) => {
+    let basePrompt = `You are a legal expert specializing in Bay Area landlord-tenant law with access to a database of 30 real cases. Your responses must:
 1. Be concise and under 200 words per response
 2. Focus ONLY on landlord-tenant law topics including:
    - Rent control and tenant protections
@@ -41,44 +41,54 @@ Important Rules:
 - Reject any off-topic requests
 - Keep responses practical and specific to Bay Area regulations`;
 
-  if (pdfUrl) {
-    const pdfContext = await getPdfContext(pdfUrl);
-    if (pdfContext) {
-      basePrompt += `\n\nRelevant Case Context:\n${pdfContext}`;
+    if (caseContext) {
+        basePrompt += `
+
+Current Case Context:
+Case #${caseContext.id}: ${caseContext.title}
+Issues: ${caseContext.issues.join(', ')}
+Outcome: ${caseContext.outcome.join(', ')}`;
     }
-  }
 
-  basePrompt += `\n\nCase Database:\n${JSON.stringify(cases, null, 2)}`;
+    if (pdfUrl) {
+        const pdfContext = await getPdfContext(pdfUrl);
+        if (pdfContext) {
+            basePrompt += `
 
-  return basePrompt;
+Relevant Case Document Content:
+${pdfContext}`;
+        }
+    }
+
+    return basePrompt;
 };
 
 export function registerRoutes(app: Express) {
   app.post("/api/chat", async (req, res) => {
     try {
-      const { message, pdfUrl } = req.body;
+        const { message, pdfUrl, caseContext } = req.body;
 
-      if (!message) {
-        return res.status(400).json({ error: "Message is required" });
-      }
+        if (!message) {
+            return res.status(400).json({ error: "Message is required" });
+        }
 
-      const systemPrompt = await createSystemPrompt(pdfUrl);
+        const systemPrompt = await createSystemPrompt(pdfUrl, caseContext);
 
-      const completion = await openai.chat.completions.create({
-        model: "gpt-4",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: message }
-        ],
-        temperature: 0.7,
-        max_tokens: 400
-      });
+        const completion = await openai.chat.completions.create({
+            model: "gpt-4",
+            messages: [
+                { role: "system", content: systemPrompt },
+                { role: "user", content: message }
+            ],
+            temperature: 0.7,
+            max_tokens: 400
+        });
 
-      const reply = completion.choices[0]?.message?.content || "I apologize, but I couldn't generate a response.";
-      res.json({ message: reply });
+        const reply = completion.choices[0]?.message?.content || "I apologize, but I couldn't generate a response.";
+        res.json({ message: reply });
     } catch (error) {
-      console.error("Chat API Error:", error);
-      res.status(500).json({ error: "Failed to process your request" });
+        console.error("Chat API Error:", error);
+        res.status(500).json({ error: "Failed to process your request" });
     }
   });
 }
