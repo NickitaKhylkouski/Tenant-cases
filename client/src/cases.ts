@@ -4,6 +4,7 @@ export interface Case {
   issues: string[];
   outcome: string[];
   emoji: string;
+  pdfUrl: string;
 }
 
 export const cases: Case[] = [
@@ -18,7 +19,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant did not meet the burden of proof for the window issue",
       "Tenant awarded a 50% rent reduction for three months for the heating issue"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-1-heating-windows.pdf"
   },
   {
     id: 2,
@@ -32,7 +34,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant awarded a reduction in rent",
       "Rebate for banked increases paid since Sept. 1, 2022"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-2-rent-increase.pdf"
   },
   {
     id: 3,
@@ -45,7 +48,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenants awarded $7,050.60 for habitability reduction"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-3-severe-mold-growth.pdf"
   },
   {
     id: 4,
@@ -59,7 +63,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant awarded $46,834.50 in rent refund",
       "Ongoing monthly rent reduction of $310.50"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-4-multiple-habitability-issues.pdf"
   },
   {
     id: 5,
@@ -73,7 +78,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant awarded a 25% rent reduction",
       "Rent refund of $1,293.00 awarded"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-5-water-damage-mold.pdf"
   },
   {
     id: 6,
@@ -85,7 +91,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "No monetary award specified"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-6-rent-concessions-dispute.pdf"
   },
   {
     id: 7,
@@ -97,7 +104,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant did not have to pay banked rent increases"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-7-banked-rent-increases-hardship.pdf"
   },
   {
     id: 8,
@@ -111,7 +119,8 @@ export const cases: Case[] = [
     outcome: [
       "$4,850 awarded for bathroom and trash issues",
       "$100 monthly rent reduction until parking issue resolved"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-8-bathroom-parking-issues.pdf"
   },
   {
     id: 9,
@@ -125,7 +134,8 @@ export const cases: Case[] = [
     outcome: [
       "$5,100 awarded for various issues",
       "$150 monthly rent reduction until issues resolved"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-9-bedroom-mold-water-damage.pdf"
   },
   {
     id: 10,
@@ -139,7 +149,8 @@ export const cases: Case[] = [
     outcome: [
       "$11,722.03 awarded for habitability violations",
       "$11,016 awarded for secondhand smoke issues"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-10-secondhand-smoke-base-rent-dispute.pdf"
   },
   {
     id: 11,
@@ -153,7 +164,8 @@ export const cases: Case[] = [
     outcome: [
       "The tenant was awarded $460",
       "$230 for the security gate issue and $230 for the ant infestation"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-11-property-registration-pest-issues.pdf"
   },
   {
     id: 12,
@@ -168,7 +180,8 @@ export const cases: Case[] = [
       "Rent was reduced by 5%",
       "Tenant to receive $748.36 in rent reimbursement",
       "Rent reduced to $710.95 until repairs are completed"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-12-outdoor-patio-maintenance.pdf"
   },
   {
     id: 13,
@@ -182,7 +195,8 @@ export const cases: Case[] = [
     outcome: [
       "Rent was reduced by 7.5%",
       "Tenant awarded $1083.55 in rent reimbursement"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-13-roach-infestation-noise-issues.pdf"
   },
   {
     id: 14,
@@ -196,7 +210,8 @@ export const cases: Case[] = [
     outcome: [
       "Rent was reduced by 7.5%",
       "Tenants awarded $268.56 in reimbursement"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-14-property-management-issues.pdf"
   },
   {
     id: 15,
@@ -208,7 +223,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant awarded a $2,209.00 refund"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-15-multiple-rent-increases.pdf"
   },
   {
     id: 16,
@@ -220,7 +236,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant awarded $9,480.67 plus an ongoing reduction of $475.00 per month"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-16-water-damage-rent-rollback.pdf"
   },
   {
     id: 17,
@@ -233,7 +250,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "No decision specified in the source"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-17-utility-charges-security-deposit.pdf"
   },
   {
     id: 18,
@@ -247,7 +265,8 @@ export const cases: Case[] = [
     outcome: [
       "Appeal denied, previous decision upheld",
       "$7,050.60 rent refund for the tenants"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-18-mold-case-appeal.pdf"
   },
   {
     id: 19,
@@ -261,7 +280,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant awarded a reduction in rent",
       "Reduction equivalent to banked increases after Oct. 9, 2022"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-19-household-income-disclosure.pdf"
   },
   {
     id: 20,
@@ -275,7 +295,8 @@ export const cases: Case[] = [
     outcome: [
       "Tenant awarded a reduction in rent",
       "Reduction equal to banked increases after Oct. 9, 2022"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-20-late-petition-filing.pdf"
   },
   {
     id: 21,
@@ -289,7 +310,8 @@ export const cases: Case[] = [
     outcome: [
       "Landlord found to be in partial compliance",
       "Ongoing rent rebate for September - November 2023"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-21-compliance-hearing.pdf"
   },
   {
     id: 22,
@@ -301,7 +323,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant awarded a $7,321.44 credit"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-22-utility-fees-rent-concession.pdf"
   },
   {
     id: 23,
@@ -313,7 +336,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant awarded a $309.76 refund"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-23-rent-stabilization-information.pdf"
   },
   {
     id: 24,
@@ -325,7 +349,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "Tenant awarded a $1,709.75 refund"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-24-base-rent-calculation.pdf"
   },
   {
     id: 25,
@@ -340,7 +365,8 @@ export const cases: Case[] = [
       "$8,217.06 awarded to the tenant",
       "Monthly rent credits issued to the tenant",
       "Landlord must maintain the property"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-25-mold-rent-increase-dispute.pdf"
   },
   {
     id: 26,
@@ -355,7 +381,8 @@ export const cases: Case[] = [
       "$7,596.30 awarded for unlawful rent",
       "$800.00 awarded for failure to maintain or repair",
       "Correct base rent determined"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-26-unlawful-rent-increase-maintenance.pdf"
   },
   {
     id: 27,
@@ -370,7 +397,8 @@ export const cases: Case[] = [
       "Banked rent increase removed",
       "Lawful rent set at $1,485.75",
       "Tenant awarded refund for rent overpayments"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-27-low-income-tenant-hardship.pdf"
   },
   {
     id: 28,
@@ -382,7 +410,8 @@ export const cases: Case[] = [
     ],
     outcome: [
       "$1,487.20 awarded to tenant plus overpayment reimbursement after August 1, 2023"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-28-simple-rent-overcharge.pdf"
   },
   {
     id: 29,
@@ -395,7 +424,8 @@ export const cases: Case[] = [
     outcome: [
       "$3,040.42 rent overpayment awarded plus additional overpayments for February 2023",
       "Landlord cannot raise rent until property is registered"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-29-multiple-illegal-rent-increases.pdf"
   },
   {
     id: 30,
@@ -409,6 +439,7 @@ export const cases: Case[] = [
       "$6,072.11 awarded for rent overpayments",
       "$500.00 unlawful pet deposit to be refunded",
       "Base rent rolled back"
-    ]
+    ],
+    pdfUrl: "/pdfs/case-30-pet-deposit-rent-concessions.pdf"
   }
 ];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, ChevronUp, Search, Info as InfoIcon, MessageSquare } from 'lucide-react';
+import { ChevronDown, ChevronUp, Search, Info as InfoIcon, MessageSquare, FileText } from 'lucide-react';
 import { Link } from 'wouter';
 import { Case, cases } from '../cases';
 
@@ -94,6 +94,17 @@ const CaseSummary = () => {
                           <li key={i} className="text-green-700">{result}</li>
                         ))}
                       </ul>
+                    </div>
+                    <div className="pt-4 border-t border-gray-200">
+                      <a
+                        href={caseItem.pdfUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+                      >
+                        <FileText className="w-4 h-4 mr-2" />
+                        View Full Case PDF
+                      </a>
                     </div>
                   </div>
                 </div>
