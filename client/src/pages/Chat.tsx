@@ -15,18 +15,23 @@ const Chat = () => {
   const [selectedCase, setSelectedCase] = useState<typeof cases[0] | null>(null);
   const [location] = useLocation();
 
-  // Get case ID from URL if present
+  // Get case ID from URL if present with improved error handling
   useEffect(() => {
-    const caseId = new URLSearchParams(location.split('?')[1]).get('case');
-    if (caseId) {
-      const foundCase = cases.find(c => c.id === parseInt(caseId));
-      if (foundCase) {
-        setSelectedCase(foundCase);
-        setMessages([{
-          role: 'assistant',
-          content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
-        }]);
-      }
+    try {
+        const params = new URLSearchParams(location.split('?')[1] || '');
+        const caseId = params.get('case');
+        if (caseId) {
+            const foundCase = cases.find(c => c.id === parseInt(caseId, 10));
+            if (foundCase) {
+                setSelectedCase(foundCase);
+                setMessages([{
+                    role: 'assistant',
+                    content: `I'm ready to help you with questions about Case #${foundCase.id}: ${foundCase.title}. What would you like to know?`
+                }]);
+            }
+        }
+    } catch (error) {
+        console.error('Error parsing case parameter:', error);
     }
   }, [location]);
 
