@@ -191,6 +191,25 @@ const Chat = () => {
               >
                 Provide timeline of this case
               </button>
+              <hr></hr>
+              <button
+                className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => {
+                  setInput("Proveer un resumen de este caso");
+                  handleSubmit(new Event("submit"));
+                }}
+              >
+                Proveer un resumen de este caso
+              </button>
+              <button
+                className="px-4 py-2 mt-2 bg-green-600 text-white rounded-lg hover:bg-green-700"
+                onClick={() => {
+                  setInput("¿Cuáles son los fundamentos legales de este caso?");
+                  handleSubmit(new Event("submit"));
+                }}
+              >
+                ¿Cuáles son los fundamentos legales de este caso?
+              </button>
             </div>
           )}
 
